@@ -1,0 +1,15 @@
+# personal logs (don't publish)
+progress.csv
+reflections.csv
+milestones.csv
+
+# python cache
+__pycache__/
+*.pyc
+
+# virtual env
+.venv/
+venv/
+
+# streamlit cache
+.streamlit/
