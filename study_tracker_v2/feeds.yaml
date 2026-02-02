@@ -1,0 +1,52 @@
+sections:
+- name: AI x Social Science (arXiv)
+  description: 每天快速扫一遍与心理/营销/经济相关的AI方法与应用（arXiv RSS）
+  items:
+  - title: cs.CL (NLP/LLM)
+    type: rss
+    url: http://export.arxiv.org/rss/cs.CL
+  - title: cs.LG (ML)
+    type: rss
+    url: http://export.arxiv.org/rss/cs.LG
+  - title: stat.ML (Stat ML)
+    type: rss
+    url: http://export.arxiv.org/rss/stat.ML
+  - title: econ.EM (Econometrics)
+    type: rss
+    url: http://export.arxiv.org/rss/econ.EM
+- name: Psych / Marketing / Econ (quick links)
+  description: 期刊与预印本平台入口（以入口链接为主）
+  items:
+  - title: PsyArXiv (preprints)
+    type: link
+    url: https://osf.io/preprints/psyarxiv/
+  - title: SSRN (Economics & Business)
+    type: link
+    url: https://www.ssrn.com/
+  - title: NBER Working Papers
+    type: link
+    url: https://www.nber.org/papers
+  - title: OpenReview (ICLR/NeurIPS/ICML)
+    type: link
+    url: https://openreview.net/
+  - title: Semantic Scholar (alerts/search)
+    type: link
+    url: https://www.semanticscholar.org/
+- name: Hackathons / Demos
+  description: 黑客松与demo项目入口（灵感库）
+  items:
+  - title: Devpost Hackathons
+    type: link
+    url: https://devpost.com/hackathons
+  - title: Hacker News (Show HN)
+    type: link
+    url: https://news.ycombinator.com/show
+  - title: GitHub Trending
+    type: link
+    url: https://github.com/trending
+  - title: Papers with Code (SOTA + code)
+    type: link
+    url: https://paperswithcode.com/
+fetch:
+  max_items_per_feed: 10
+  timeout_seconds: 8

@@ -1,0 +1,265 @@
+meta:
+  start_date: '2026-01-28'
+  timezone: local
+  daily_budget_minutes: 120
+  modules:
+    paper:
+      planned_minutes_per_day: 25
+    stats:
+      planned_minutes_per_day: 65
+    algo:
+      planned_minutes_per_day: 20
+    project:
+      planned_minutes_per_day: 30
+  note: You can edit this YAML anytime. If links break, search by course name.
+weeks:
+- week: 1
+  focus:
+  - 线代入门：向量/矩阵/几何直觉
+  - 概率复盘：条件概率、期望、常见分布
+  - 把OLS矩阵形式写熟
+  resources:
+  - type: course
+    name: MIT 18.06 Linear Algebra (Strang)
+    url: https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/
+  - type: course
+    name: Harvard STAT110 (Blitzstein)
+    url: https://projects.iq.harvard.edu/stat110/home
+  deliverable: W1项目：CI工具箱v1（t区间 + bootstrap percentile）+ coverage模拟(不同n)
+  daily_tasks:
+    Mon: 18.06 L1-2；STAT110 条件概率；写t区间函数
+    Tue: 18.06 L3；STAT110 期望；bootstrap percentile CI
+    Wed: 18.06 L4；STAT110 常见分布；coverage模拟(小n)
+    Thu: 18.06 L5；STAT110 极限定理直觉；coverage模拟(大n)
+    Fri: 复盘+整理；把CI封装+最小测试
+    Sat: 用一份真实数据跑CI并写短报告(1页)
+    Sun: 读1篇应用论文并写5行卡片
+- week: 2
+  focus:
+  - 线代：投影/最小二乘/正交分解
+  - 概率：独立/联合分布
+  - 统计推断：抽样分布与枢轴量
+  resources:
+  - type: course
+    name: MIT 18.06 Linear Algebra
+    url: https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/
+  - type: course
+    name: MIT 18.650 Statistics for Applications
+    url: https://ocw.mit.edu/courses/18-650-statistics-for-applications-fall-2016/
+  deliverable: W2项目：Power模拟器v1（t检验/比例检验）+ α/β/power 可视化
+  daily_tasks:
+    Mon: 18.06 投影；18.650 抽样分布；写t检验函数
+    Tue: 18.06 最小二乘；18.650 枢轴量；写power模拟骨架
+    Wed: 18.06 QR直觉；18.650 CI；做t检验power图
+    Thu: 18.06 正交分解；18.650 检验；做比例检验power图
+    Fri: 整理：写README + 参数可调
+    Sat: 把power模拟器用在你关心的效应量/样本量设置上
+    Sun: 读1篇方法应用论文并做卡片
+- week: 3
+  focus:
+  - MLE：似然/对数似然/数值优化
+  - 指数族与充分统计量（入门）
+  - 渐近：一致性/渐近正态（直觉+推导）
+  resources:
+  - type: course
+    name: MIT 18.650 (Inference/MLE)
+    url: https://ocw.mit.edu/courses/18-650-statistics-for-applications-fall-2016/
+  - type: textbook
+    name: Casella & Berger (Mathematical Statistics)
+    url: https://www.amazon.com/Statistical-Inference-George-Casella/dp/0534243126
+  deliverable: W3项目：MLE小库v1（Bernoulli/Poisson/Normal/Gamma）+ 数值优化 + 标准误(数值Hessian)
+  daily_tasks:
+    Mon: 写Bernoulli/Poisson loglik；数值优化scipy.minimize
+    Tue: 写Normal loglik；封装统一API
+    Wed: 写Gamma loglik；加参数约束处理
+    Thu: 数值Hessian→标准误；画likelihood曲线(一例)
+    Fri: 小结：在模拟数据上验证一致性
+    Sat: 写1页方法笔记（MLE+SE怎么来）
+    Sun: 读1篇含MLE/GLM的实证论文做卡片
+- week: 4
+  focus:
+  - Wald/Score/LR 检验关系
+  - Bootstrap/Permutation（更稳健）
+  - 回归诊断：残差/影响点/异方差
+  resources:
+  - type: course
+    name: MIT 18.650 / 18.655 (Testing/Asymptotics)
+    url: https://ocw.mit.edu/search/?q=18.655%20mathematical%20statistics
+  - type: doc
+    name: statsmodels docs (GLM/OLS)
+    url: https://www.statsmodels.org/
+  deliverable: W4项目：稳健推断工具箱（robust SE / bootstrap SE / permutation p）在同一数据上对照
+  daily_tasks:
+    Mon: 实现Wald/Score/LR（先对Bernoulli）
+    Tue: 写permutation test模板
+    Wed: 写bootstrap SE模板
+    Thu: 用statsmodels OLS跑 robust SE
+    Fri: 同一案例：三种SE/p对比 + 解释差异
+    Sat: 整理成notebook+图表
+    Sun: 读1篇心理/营销里用稳健推断的论文做卡片
+- week: 5
+  focus:
+  - GLM：Logit（系数解释、边际效应）
+  - 评估：校准、AUC、置信区间
+  - 线代补：特征值/正定
+  resources:
+  - type: course
+    name: MIT 18.650 (GLM topics)
+    url: https://ocw.mit.edu/courses/18-650-statistics-for-applications-fall-2016/
+  - type: tool
+    name: scikit-learn model evaluation
+    url: https://scikit-learn.org/stable/modules/model_evaluation.html
+  deliverable: W5项目：Logit实战（选择/购买）+ 边际效应 + 校准曲线 + 简短解读
+  daily_tasks:
+    Mon: statsmodels Logit 跑通 + 解读
+    Tue: 边际效应（marginal effects）与可视化
+    Wed: AUC/校准曲线（含CV）
+    Thu: Bootstrap CI 给AUC/边际效应
+    Fri: 误差分析：错分样本特征
+    Sat: 写1页报告
+    Sun: 读1篇GLM在心理/营销的应用论文卡片
+- week: 6
+  focus:
+  - GLM：Poisson / Negative Binomial
+  - 过度离散与零膨胀直觉
+  - 模型比较：AIC/BIC/似然比
+  resources:
+  - type: doc
+    name: statsmodels GLM
+    url: https://www.statsmodels.org/stable/glm.html
+  - type: book
+    name: 'Gelman & Hill: Data Analysis Using Regression and Multilevel/Hierarchical
+      Models'
+    url: https://www.cambridge.org/core/books/data-analysis-using-regression-and-multilevelhierarchical-models/32A29531C7FD7308CFA15A84D5D27D60
+  deliverable: W6项目：计数模型对照（Poisson vs NB；可选ZIP）+ 诊断 + 解释
+  daily_tasks:
+    Mon: Poisson GLM 跑通 + 解释
+    Tue: NB 模型 + 过度离散检查
+    Wed: 似然比/AIC/BIC对比
+    Thu: 可选：ZIP/ZI-NB（如果数据适合）
+    Fri: 稳健性：bootstrap SE 或 cluster SE
+    Sat: 写报告
+    Sun: 读1篇计数模型应用论文卡片
+- week: 7
+  focus:
+  - 因果推断入门：潜在结果框架
+  - 随机试验与A/B
+  - 基本DAG直觉（不必太深）
+  resources:
+  - type: book
+    name: 'Causal Inference: The Mixtape (online)'
+    url: https://mixtape.scunning.com/
+  - type: book
+    name: 'Causal Inference: What If (free online)'
+    url: https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/
+  deliverable: W7项目：A/B分析模板（ATE + CI + 结果可视化 + pre-registration风格报告）
+  daily_tasks:
+    Mon: 潜在结果框架 + ATE
+    Tue: 随机化检验（randomization inference）
+    Wed: 分层/协变量调整(回归)
+    Thu: 异质性分析（简单分组）
+    Fri: 写模板：输入数据→输出报告
+    Sat: 用模拟数据跑一遍
+    Sun: 读1篇实验/因果应用论文卡片
+- week: 8
+  focus:
+  - DID：平行趋势、事件研究图
+  - 匹配与加权（轻量版）
+  - 稳健性与安慰剂检验
+  resources:
+  - type: book
+    name: The Mixtape (DID chapters)
+    url: https://mixtape.scunning.com/
+  - type: tool
+    name: linearmodels (panel/DID utilities)
+    url: https://bashtage.github.io/linearmodels/
+  deliverable: W8项目：DID + event-study 可视化（模拟+公开数据一例）
+  daily_tasks:
+    Mon: DID基本式 + 解释
+    Tue: 事件研究(event study)图
+    Wed: 安慰剂/伪处理检验
+    Thu: 加权或匹配（先做最简）
+    Fri: 整理notebook
+    Sat: 公开数据一例（可用任意开放面板数据）
+    Sun: 读1篇DID在营销/心理的应用论文卡片
+- week: 9
+  focus:
+  - 贝叶斯直觉：先验/后验/预测分布
+  - 层级模型动机（个体差异）
+  - MCMC概念（够用）
+  resources:
+  - type: course
+    name: Statistical Rethinking (videos)
+    url: https://github.com/rmcelreath/stat_rethinking_2024
+  - type: tool
+    name: PyMC documentation
+    url: https://www.pymc.io/projects/docs/en/stable/
+  deliverable: W9项目：Bayes Logistic（弱信息先验） vs 频率学派对照 + posterior predictive check
+  daily_tasks:
+    Mon: 先验/后验/预测分布
+    Tue: PyMC跑一个最小模型
+    Wed: Bayes logistic + 后验摘要
+    Thu: posterior predictive check
+    Fri: 与statsmodels对照
+    Sat: 写短报告（何时Bayes更合适）
+    Sun: 读1篇层级Bayes应用论文卡片
+- week: 10
+  focus:
+  - 文本/文献处理基础：PDF→分段→embedding检索
+  - 评估：准确性/引用一致性/幻觉率
+  - 实验设计：人评协议
+  resources:
+  - type: tool
+    name: OpenAI Cookbook (RAG patterns)
+    url: https://github.com/openai/openai-cookbook
+  - type: tool
+    name: LangGraph (agent workflows)
+    url: https://github.com/langchain-ai/langgraph
+  deliverable: W10项目：文献助手RAG骨架（本地文档检索+回答带引用）+ 评估集v1(20问)
+  daily_tasks:
+    Mon: 文本切分与元数据结构
+    Tue: 向量检索骨架（可先用本地embedding或简单BM25）
+    Wed: 回答模板：结构化输出+引用
+    Thu: 评估集v1（20问+答案要点）
+    Fri: 跑评估并记录错误类型
+    Sat: 迭代：减少幻觉（强制引用/拒答规则）
+    Sun: 读1篇RAG/评估论文卡片
+- week: 11
+  focus:
+  - Agent工作流：计划→检索→写作→自检→输出
+  - 工具调用与日志
+  - 可复现性与版本管理
+  resources:
+  - type: tool
+    name: LangChain (quickstart)
+    url: https://github.com/langchain-ai/langchain
+  - type: tool
+    name: LlamaIndex (doc QA)
+    url: https://github.com/run-llama/llama_index
+  deliverable: W11项目：文献助手MVP（导入PDF→生成卡片→对比表→APA引用）+ 日志与失败回退
+  daily_tasks:
+    Mon: 实现导入与索引流程
+    Tue: 结构化卡片生成（模板固定）
+    Wed: 多篇对比表（5-10篇）
+    Thu: APA7/BibTeX输出
+    Fri: 日志+失败回退（无引用则拒答）
+    Sat: 用你真实课题跑一次
+    Sun: 写使用说明（README）
+- week: 12
+  focus:
+  - 价值验证：节省时间/正确率/用户满意度
+  - 人评协议与A/B
+  - 下一阶段路线规划
+  resources:
+  - type: note
+    name: Evaluation checklist (you will create)
+    url: ''
+  deliverable: W12项目：价值评估报告v1（对照：人工 vs agent；指标+结论+下一步）
+  daily_tasks:
+    Mon: 定义指标（正确率/可追溯/节省时间）
+    Tue: 设计人评表与流程（10-20条样本）
+    Wed: 收集对照数据
+    Thu: 分析结果+可视化
+    Fri: 写报告v1
+    Sat: 修订并规划下一季度
+    Sun: 复盘：把计划写进下一版plan.yaml
